@@ -1,0 +1,80 @@
+# > 网页弹窗
+DOMAIN-KEYWORD,112wan
+DOMAIN-KEYWORD,asewlfjqwlflkew
+DOMAIN-KEYWORD,bngpt
+DOMAIN-KEYWORD,bongacash
+DOMAIN-KEYWORD,dat8
+DOMAIN-KEYWORD,dfkj8
+DOMAIN-KEYWORD,dlads
+DOMAIN-KEYWORD,exosrv
+DOMAIN-KEYWORD,greenplasticdua
+DOMAIN-KEYWORD,haowanyou
+DOMAIN-KEYWORD,highwebmedia
+DOMAIN-KEYWORD,jads
+DOMAIN-KEYWORD,lieyou
+DOMAIN-KEYWORD,mifengv
+DOMAIN-KEYWORD,o333o
+DOMAIN-KEYWORD,stunninglover
+DOMAIN-KEYWORD,toateeli
+DOMAIN-KEYWORD,trwl1
+DOMAIN-KEYWORD,xxshuyuan
+# > 知乎社区
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers/\d+/related-readings
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d\/hot_recommendation
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d\/questions/\d+/related-readings
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/commercial_api\/banner
+URL-REGEX,^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles
+# > 腾讯系列
+DOMAIN-SUFFIX,bz.html5.qq.com
+DOMAIN-SUFFIX,ilive.html5.qq.com
+DOMAIN-SUFFIX,qbdsp.html5.qq.com
+DOMAIN-SUFFIX,upage.html5.qq.com
+DOMAIN-SUFFIX,vp.html5.qq.com
+URL-REGEX,^https?:\/\/kandian\.qq\.com\/kandian_article\/get_article_recomm
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/bizmall\/reward
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/.+ad
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/.+monitor
+URL-REGEX,^https?:\/\/mp\.weixin\.qq\.com\/mp\/.+report
+URL-REGEX,^https?:\/\/news\.html5\.qq\.com\/api\/articles\/getInsertRecommList
+URL-REGEX,^https?:\/\/news\.html5\.qq\.com\/api\/articles\/getRecommendMergeInfo
+URL-REGEX,^https?:\/\/news\.html5\.qq\.com\/api\/circles\/getPostSummary
+URL-REGEX,^https?:\/\/qbusercenter\.html5\.qq\.com\/api\/cardList
+URL-REGEX,^https?:\/\/quan\.qq\.com\/newscomment\/api\/getUserHonorInfoEx
+URL-REGEX,^https?:\/\/quan\.qq\.com\/node\/api\d\/getAds
+URL-REGEX,^https?:\/\/quan\.qq\.com\/sharecenter\/needSharePanel
+# > 酷我音乐
+DOMAIN-SUFFIX,g.koowo.com
+DOMAIN-SUFFIX,mobilead.kuwo.cn
+DOMAIN-SUFFIX,rich.kuwo.cn
+URL-REGEX,^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/AdService
+URL-REGEX,^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/EcomResourceServer
+URL-REGEX,^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/MobileAdServer
+URL-REGEX,^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/g\.real\?aid=text_ad
+# > 哔哩哔哩
+DOMAIN-SUFFIX,cm.bilibili.com
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/article\/actinfo
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/article\/more
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v\d\/dm\/ad
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v\d\/search\/defaultword
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v\d\/search\/square
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash
+# > 斗鱼直播
+URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
+# > 建设银行
+URL-REGEX,^https?:\/\/adv\.ccb\.com\/advall\?z=advccb
+# > 手机淘宝
+URL-REGEX,^https?:\/\/gw\.alicdn\.com\/\w{2}s\/.+\.jpg_9\d{2}
+URL-REGEX,^https?:\/\/gw\.alicdn\.com\/\w{2}s\/.+\.jpg_\d{4}
+URL-REGEX,^https?:\/\/gw\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_9\d{2}
+URL-REGEX,^https?:\/\/gw\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_\d{4}
+URL-REGEX,^https?:\/\/heic\.alicdn\.com\/\w{2}s\/.+\.jpg_9\d{2}
+URL-REGEX,^https?:\/\/heic\.alicdn\.com\/\w{2}s\/.+\.jpg_\d{4}
+URL-REGEX,^https?:\/\/heic\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_9\d{2}
+URL-REGEX,^https?:\/\/heic\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_\d{4}
+# > 京东商城
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=queryMaterialAdverts
+# > 新浪微博
+URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/actionad\.php
+URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php
+URL-REGEX,^https?:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua
