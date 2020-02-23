@@ -1,0 +1,58 @@
+# > Youtube
+DOMAIN,ads.youtube.com
+# > 哔哩哔哩
+DOMAIN,api.biliapi.com
+DOMAIN,api.biliapi.net
+DOMAIN,app.biliapi.com
+DOMAIN,app.biliapi.net
+DOMAIN-SUFFIX,cm.ad.bilibili.com
+DOMAIN-SUFFIX,cm.adcommon.bilibili.com
+DOMAIN-SUFFIX,cm.game.bilibili.com
+DOMAIN-SUFFIX,cm.track.biligame.bilibili.com
+DOMAIN-WILDCARD,*pcdn*.biliapi.net
+# > 滴滴出行
+DOMAIN,adtrack.xiaojukeji.com
+# > 斗鱼直播
+DOMAIN,stun1.douyucdn.cn
+DOMAIN,stun1.qvb.qcloud.com
+# > 京东
+DOMAIN,dns.jd.com
+# > 淘宝
+DOMAIN-SUFFIX,acs4baichuan.m.taobao.com
+DOMAIN-SUFFIX,adashbc.m.taobao.com
+DOMAIN-SUFFIX,adashx4yt.m.taobao.com
+DOMAIN-SUFFIX,agoodm.m.taobao.com
+DOMAIN-SUFFIX,ai.taobao.com
+DOMAIN-SUFFIX,api.waptest.taobao.com
+DOMAIN-SUFFIX,apoll.m.taobao.com
+DOMAIN-SUFFIX,click.mz.simba.taobao.com
+DOMAIN-SUFFIX,click.simba.taobao.com
+DOMAIN-SUFFIX,click.tz.simba.taobao.com
+DOMAIN-SUFFIX,dsp.simba.taobao.com
+DOMAIN-SUFFIX,fav.simba.taobao.com
+DOMAIN-SUFFIX,m-adash.m.taobao.com
+DOMAIN-SUFFIX,m.simba.taobao.com
+DOMAIN-SUFFIX,mclick.simba.taobao.com
+DOMAIN-SUFFIX,re.m.taobao.com
+DOMAIN-SUFFIX,re.taobao.com
+DOMAIN-SUFFIX,redirect.simba.taobao.com
+DOMAIN-SUFFIX,simba.m.taobao.com
+DOMAIN-SUFFIX,srd.simba.taobao.com
+DOMAIN-SUFFIX,stat.simba.taobao.com
+DOMAIN-SUFFIX,temai.taobao.com
+DOMAIN-SUFFIX,textlink.simba.taobao.com
+DOMAIN-SUFFIX,tns.simba.taobao.com
+DOMAIN-SUFFIX,tunion-api.m.taobao.com
+DOMAIN-SUFFIX,unitacs.m.taobao.com
+DOMAIN-SUFFIX,ut.taobao.com
+DOMAIN-SUFFIX,w.m.taobao.com
+# > 微博
+DOMAIN,huodong.weibo.cn
+DOMAIN-SUFFIX,biz.weibo.com
+# > 支付宝
+DOMAIN,adgw.alipay.com
+DOMAIN,amdc-sibling.alipay.com.cn
+DOMAIN,amdc.alipay.com
+DOMAIN-SUFFIX,loggw.alipay.com.cn
+DOMAIN-SUFFIX,mdap.alipay.com
+DOMAIN-SUFFIX,ynuf.alipay.com
