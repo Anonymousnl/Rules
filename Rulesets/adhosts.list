@@ -1,0 +1,35 @@
+# > Keep
+DOMAIN,hc-ssp.sm.cn
+# > 高德地图
+DOMAIN,amap-aos-info-nogw.amap.com
+# > 京东商城
+DOMAIN,dns.jd.com
+# > 美团外卖
+DOMAIN,maplocatesdksnapshot.d.meituan.net
+DOMAIN,metrics-picture.d.meituan.net
+# > 手机淘宝
+DOMAIN,hudong.alicdn.com
+DOMAIN,ossgw.alicdn.com
+DOMAIN-SUFFIX,ut.taobao.com
+# > 腾讯音乐
+DOMAIN,ad.tencentmusic.com
+DOMAIN,adcdn.tencentmusic.com
+DOMAIN,adcdn6.tencentmusic.com
+DOMAIN,adclick.tencentmusic.com
+DOMAIN,adexpo.tencentmusic.com
+DOMAIN,adstats.tencentmusic.com
+DOMAIN,h.trace.qq.com
+DOMAIN,monitor.music.qq.com
+DOMAIN,oth.str.mdt.qq.com
+DOMAIN,otheve.beacon.qq.com
+DOMAIN,p.l.qq.com
+DOMAIN,sdk.e.qq.com
+DOMAIN,stat.y.qq.com
+DOMAIN,tangram.e.qq.com
+DOMAIN,tmead.y.qq.com
+DOMAIN,tmeadbak.y.qq.com
+DOMAIN,us.l.qq.com
+DOMAIN-SUFFIX,imtmp.net
+# > 新浪微博
+DOMAIN,huodong.weibo.cn
+DOMAIN-SUFFIX,biz.weibo.com
