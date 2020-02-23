@@ -1,0 +1,41 @@
+[Adblock Plus 2.0]
+! Title: 自用规则
+! Version: 20240803
+! Expires: 5 hours
+! Homepage: https://github.com/Anonymousnl/Rules/tree/master/Greasy
+
+pan.baidu.com##.nd-chat-ai-btn__container
+pan.baidu.com##.nd-game-entry.wp-s-header__right-item.gameEntry
+pan.baidu.com##.nd-operate-guidance__body
+pan.baidu.com##.nd-sug-ad-item.wp-s-header__right-item
+pan.baidu.com##.nd-sug-ad-item.wp-s-header__right-item.wp-s-header__nav-tooltip
+pan.baidu.com##.nd-team-space.wp-s-header__right-item
+pan.baidu.com##.nd-vip-btn.wp-s-header__right-item
+pan.baidu.com##.wp-s-aside-nav__main
+tool.ip138.com##.footer
+tool.ip138.com##.header
+tool.ip138.com##.only-pc.mod-breadcrumb
+tool.ip138.com##.side
+tool.ip138.com##.tips
+www.baidu.com##.s-isindex-wrap.s-bottom-layer
+www.baidu.com##.s-isindex-wrap.s-top-left-new
+www.baidu.com##.tag-container_ksKXH
+www.douyu.com##.AnchorPocketTips
+www.douyu.com##.Game.public-DropMenu
+www.douyu.com##.HeaderNav
+www.douyu.com##.Video.public-DropMenu
+www.huya.com##.GuangG--1IcYa1JEFgtE35MbPqIk7g
+www.huya.com##.jump-to-phone-bd
+www.huya.com##.player-box-icon-tip
+www.huya.com##.room-sidebar-hd
+www.huya.com##.tip-bg-common-new.diy-activity-icon-bubble-tips
+www.huya.com##.tips-blueRay--2ci_UgGVmW3qfttie1K_dj.game-filter-tips--FkGnnmfxtMkC4UM4I-Xga
+www.huya.com##.wrap-income.chat-wrap-panel
+www.iqiyi.com##.hotContent_container__\+PKtp
+www.wetools.com###addweixin-widget
+www.wetools.com##.breadcrumb-wrap
+www.wetools.com##.page-footer
+www.wetools.com##.ui_bggray
+www.wetools.com##.ui_header.page-header
+www.wetools.com##.ui_tooldesc
+www.wetools.com##.ui_toolrecom
