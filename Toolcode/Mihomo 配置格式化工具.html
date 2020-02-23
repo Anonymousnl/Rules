@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mihomo 配置格式化工具</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#121a2d;--panel2:#0e1628;--line:#283550;--text:#edf2ff;--muted:#9aa8c4;--accent:#80a7ff;--accent2:#a7f3d0;--warn:#f6c76a;--danger:#ff9eaa;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1000px 520px at 5% -10%,#1b2b50 0%,transparent 65%),radial-gradient(900px 500px at 100% 0%,#172849 0%,transparent 60%),var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+.wrap{max-width:1440px;margin:0 auto;padding:28px 22px 36px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.eyebrow{color:var(--accent2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.title{font-size:clamp(25px,3vw,36px);line-height:1.2;margin:8px 0 9px;letter-spacing:-.035em}.subtitle{color:var(--muted);max-width:780px}.tag{border:1px solid #365072;background:#15243e;color:#b9d3ff;padding:7px 11px;border-radius:999px;font-size:12px;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}.main,.side{background:linear-gradient(180deg,rgba(18,26,45,.97),rgba(13,21,38,.97));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 50px rgba(0,0,0,.18)}.main{overflow:hidden}.toolbar{padding:15px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:9px;align-items:center}.btn{appearance:none;border:1px solid #34425f;border-radius:10px;padding:9px 13px;background:#1b2740;color:var(--text);font-weight:700;cursor:pointer;transition:.15s;font-size:13px}.btn:hover{transform:translateY(-1px);border-color:#6d8dc9;background:#243656}.btn.primary{background:linear-gradient(135deg,#80a7ff,#6b8fff);border-color:transparent;color:#09142b}.btn.good{background:#14372f;border-color:#236654;color:#b5f8df}.btn.ghost{background:transparent}.btn:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.filename{color:var(--muted);font-size:12px;margin-left:auto;overflow-wrap:anywhere}
+.stats{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px 0}.stat{padding:5px 9px;border:1px solid #2b3b58;background:#101a2e;border-radius:999px;color:#b5c3df;font-size:12px}.stat b{color:#fff;margin-right:4px}.editor-wrap{padding:12px 15px 15px}.editor-head{display:flex;justify-content:space-between;align-items:center;margin:2px 0 10px;gap:10px}.editor-head strong{font-size:13px}.hint{font-size:12px;color:var(--muted)}textarea{display:block;width:100%;min-height:68vh;resize:vertical;background:#080e1a;color:#dce7ff;border:1px solid #263653;border-radius:13px;padding:17px 18px;font:12px/1.72 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;tab-size:2;white-space:pre;overflow:auto;outline:none}.side{padding:18px;position:sticky;top:16px}.side h2{font-size:15px;margin:0 0 12px}.side h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#aab9d5;margin:18px 0 7px}.side p{color:var(--muted);font-size:12px;margin:7px 0}.note{border:1px solid #30415f;background:#101b30;border-radius:12px;padding:12px;margin:12px 0}.note strong{display:block;margin-bottom:5px;font-size:12px}.note.warn{border-color:#68552f;background:#2b2417}.note.warn strong{color:var(--warn)}.note.ok{border-color:#285b4d;background:#102b25}.note.ok strong{color:var(--accent2)}.status{padding:12px 15px;border-top:1px solid var(--line);display:flex;align-items:flex-start;gap:9px;color:var(--muted);font-size:12px;min-height:48px}.dot{width:8px;height:8px;background:var(--accent2);border-radius:50%;margin-top:5px;flex:0 0 auto}.status.error .dot{background:var(--danger)}.status.warn .dot{background:var(--warn)}.drop{border:1px dashed #4b6289;background:#101a2e;border-radius:12px;padding:12px;text-align:center;color:#b5c3df;font-size:12px;cursor:pointer}.drop.drag{background:#1a2a47;border-color:#8db1ff}.foot{color:#73829f;font-size:11px;text-align:center;margin-top:16px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.side{position:static}.top{display:block}.tag{display:inline-block;margin-top:14px}textarea{min-height:55vh}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div><div class="eyebrow">MIHOMO · CONFIG TOOLKIT</div><h1 class="title">Mihomo 配置格式化工具</h1><div class="subtitle">在本地浏览器中整理 YAML 配置、排序策略组的 <code>filter</code> / <code>exclude-filter</code> 正则分支，并检查常见配置问题。无需上传到服务器，支持离线使用。</div></div><div class="tag">● 本地处理 · 不联网上传</div></header>
+  <div class="layout">
+    <section class="main">
+      <div class="toolbar">
+        <button class="btn" id="openBtn">打开 YAML 文件</button><input id="fileInput" type="file" accept=".yaml,.yml,.txt" hidden>
+        <button class="btn primary" id="formatBtn">一键格式化</button>
+        <button class="btn" id="sortBtn">只排序筛选关键词</button>
+        <button class="btn" id="checkBtn">检查配置</button>
+        <button class="btn good" id="downloadBtn">下载 YAML</button>
+        <button class="btn ghost" id="copyBtn">复制内容</button>
+        <button class="btn ghost" id="resetBtn">恢复初始文件</button>
+        <span class="filename" id="filename">Mihomo_global_merged.yaml</span>
+      </div>
+      <div class="stats"><span class="stat"><b id="lineCount">0</b>行</span><span class="stat"><b id="groupCount">0</b>个策略组</span><span class="stat"><b id="filterCount">0</b>个筛选字段</span><span class="stat"><b id="iconCount">0</b>个图标</span></div>
+      <div class="editor-wrap">
+        <div class="editor-head"><strong>配置编辑区</strong><span class="hint">支持直接编辑 · Ctrl/⌘ + S 下载</span></div>
+        <div class="drop" id="dropZone">也可以将 .yaml / .yml 文件拖放到这里</div>
+        <div style="height:10px"></div>
+        <textarea id="editor" spellcheck="false" aria-label="Mihomo YAML 配置编辑区"></textarea>
+      </div>
+      <div class="status" id="status"><span class="dot"></span><span id="statusText">已载入示例配置。可以直接格式化，或打开你自己的 YAML 文件。</span></div>
+    </section>
+    <aside class="side">
+      <h2>格式化说明</h2>
+      <div class="note ok"><strong>一键格式化</strong><p>排序 <code>proxy-groups</code> 内的 <code>filter</code> / <code>exclude-filter</code> 分支，清理行尾空格，并统一为 LF 换行和文件末尾换行。</p></div>
+      <div class="note"><strong>排序规则</strong><p>英文关键词优先、中文关键词按中文排序、表情符号随后，含边界符号、转义字符或其他正则结构的特殊分支放在最后。只重排同级分支，不改写关键词本身。</p></div>
+      <div class="note warn"><strong>重要提醒</strong><p>正则分支排序通常不改变筛选是否命中，但请在应用配置前检查预览。此工具不替代 Mihomo 内核校验，也不会自动补充代理节点。</p></div>
+      <h3>静态检查范围</h3><p>• 策略组重名</p><p>• 策略组图标和筛选字段统计</p><p>• YAML 缩进中的 Tab 字符</p><p>• 空代理列表、代理提供者缺失提示</p><p>• 网易云音乐规则是否使用 DIRECT</p>
+      <h3>文件安全</h3><p>所有操作仅在当前浏览器页面中执行。打开的文件不会自动上传；下载会生成一份新的 YAML 文件。</p>
+    </aside>
+  </div>
+  <div class="foot">Mihomo Config Formatter · 单文件网页 · 适合本地打开使用</div>
+</div>
+<script>
+const DEFAULT_CONFIG = "proxies: []\nproxy-groups:\n- name: AI节点优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/OpenAI.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(AI节点|AI解锁|AI线路|AI优化|AI专线|ChatGPT|Claude|Copilot|DeepSeek|Gemini|GPT|Grok|Kimi|OpenAI|Perplexity|豆包|混元|通义|通义千问|文心一言|元宝|智谱|(^|[^A-Za-z])AI([^A-Za-z]|$))\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 全球时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/Global.png\"\n  type: url-test\n  include-all: true\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG)))\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 台湾时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/TW.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(台湾|🇹🇼|(\\b(Tai|Taiwan|TW|TWN)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 新国时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/SG.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(狮|新加坡|🇸🇬|(\\b(SG|SGP|Singapore)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 日本时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/JP.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(川日|大阪|东京|埼玉|泉日|日本|🇯🇵|(\\b(Japan|JP|JPN)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 美国时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/US.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(波特兰|达拉斯|俄勒冈|费利蒙|凤凰城|硅谷|拉斯维加斯|洛杉矶|美国|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|(\\b(United States|US|USA)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 韩国时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/KR.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(韓|韩国|首尔|🇰🇷|(\\b(KOR|Korea|KR)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 香港时延优选\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/HK.png\"\n  type: url-test\n  include-all: true\n  filter: (?i)(香港|🇭🇰|(\\b(HK|HKG|Hong)(\\d+)?\\b))\n  exclude-filter: (?i)(wandayun|版本|备用|超时|重新|倒卖|到期|导入|订阅|地址|访问|防止|返利|贩卖|福利|复制|更新|工单|官网|官址|关注|国内|过期|海外|好友|回国|获取|教程|加入|机场|客服|客户端|联系|流量|频道|群|如果只显示此节点|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|下载专用|循环|邀请|已用|游戏|邮箱|支持|作者|🎮|(\\b(Author|Channel|EMAIL|EXPIRE|Panel|TOTAL|Traffic|USE|USED)(\\d+)?\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))|\\bGAME\\b)\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  tolerance: 50\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: AI专用策略\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/OpenAI.png\"\n  type: fallback\n  proxies:\n  - AI节点优选\n  - 日本时延优选\n  - 全球时延优选\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\n- name: 兜底后备策略\n  icon: \"https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Policy/Fallback.png\"\n  type: fallback\n  proxies:\n  - 香港时延优选\n  - 台湾时延优选\n  - 日本时延优选\n  - 韩国时延优选\n  - 新国时延优选\n  - 美国时延优选\n  - 全球时延优选\n  url: https://www.gstatic.com/generate_204\n  interval: 300\n  lazy: true\n  timeout: 5000\n  max-failed-times: 5\n  expected-status: 204\nrules:\n- RULE-SET,lan_non_ip,DIRECT\n- RULE-SET,lan_ip,DIRECT\n- DOMAIN,guzzoni.apple.com,AI专用策略\n- DOMAIN-SUFFIX,smoot.apple.com,AI专用策略\n- RULE-SET,ai_ip,AI专用策略\n- RULE-SET,ai_non_ip,AI专用策略\n- RULE-SET,apple_intelligence_non_ip,AI专用策略\n- RULE-SET,stream_eu_non_ip,兜底后备策略\n- RULE-SET,stream_hk_non_ip,香港时延优选\n- RULE-SET,stream_jp_non_ip,日本时延优选\n- RULE-SET,stream_kr_non_ip,韩国时延优选\n- RULE-SET,stream_tw_non_ip,台湾时延优选\n- RULE-SET,stream_us_non_ip,美国时延优选\n- RULE-SET,telegram_non_ip,兜底后备策略\n- RULE-SET,apple_cn_non_ip,DIRECT\n- RULE-SET,apple_services,DIRECT\n- RULE-SET,microsoft_non_ip,DIRECT\n- RULE-SET,microsoft_cdn_non_ip,DIRECT\n- RULE-SET,apple_cdn,DIRECT\n- RULE-SET,download_domainset,DIRECT\n- RULE-SET,download_non_ip,DIRECT\n- RULE-SET,direct_non_ip,DIRECT\n- RULE-SET,domestic_non_ip,DIRECT\n- RULE-SET,neteasemusic_non_ip,DIRECT\n- RULE-SET,speedtest_domainset,兜底后备策略\n- RULE-SET,cdn_domainset,兜底后备策略\n- RULE-SET,cdn_non_ip,兜底后备策略\n- RULE-SET,global_non_ip,兜底后备策略\n- RULE-SET,stream_non_ip,兜底后备策略\n- RULE-SET,stream_eu_ip,兜底后备策略\n- RULE-SET,stream_hk_ip,香港时延优选\n- RULE-SET,stream_jp_ip,日本时延优选\n- RULE-SET,stream_kr_ip,韩国时延优选\n- RULE-SET,stream_tw_ip,台湾时延优选\n- RULE-SET,stream_us_ip,美国时延优选\n- RULE-SET,telegram_ip,兜底后备策略\n- RULE-SET,neteasemusic_ip,DIRECT\n- RULE-SET,china_ip,DIRECT\n- RULE-SET,domestic_ip,DIRECT\n- RULE-SET,stream_ip,兜底后备策略\n- MATCH,兜底后备策略\n\n\nrule-providers:\n  ai_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/ai.txt\n    path: ./profiles/ruleset/ai_ip.txt\n  ai_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/ai.txt\n    path: ./profiles/ruleset/ai_non_ip.txt\n  apple_cdn:\n    type: http\n    behavior: domain\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt\n    path: ./profiles/ruleset/apple_cdn.txt\n  apple_cn_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt\n    path: ./profiles/ruleset/apple_cn_non_ip.txt\n  apple_intelligence_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt\n    path: ./profiles/ruleset/apple_intelligence_non_ip.txt\n  apple_services:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/apple_services.txt\n    path: ./profiles/ruleset/apple_services.txt\n  cdn_domainset:\n    type: http\n    behavior: domain\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/domainset/cdn.txt\n    path: ./profiles/ruleset/cdn_domainset.txt\n  cdn_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/cdn.txt\n    path: ./profiles/ruleset/cdn_non_ip.txt\n  china_ip:\n    type: http\n    behavior: ipcidr\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/china_ip.txt\n    path: ./profiles/ruleset/china_ip.txt\n  direct_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/direct.txt\n    path: ./profiles/ruleset/direct_non_ip.txt\n  domestic_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/domestic.txt\n    path: ./profiles/ruleset/domestic_ip.txt\n  domestic_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt\n    path: ./profiles/ruleset/domestic_non_ip.txt\n  download_domainset:\n    type: http\n    behavior: domain\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/domainset/download.txt\n    path: ./profiles/ruleset/download_domainset.txt\n  download_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/download.txt\n    path: ./profiles/ruleset/download_non_ip.txt\n  global_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/global.txt\n    path: ./profiles/ruleset/global_non_ip.txt\n  lan_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/lan.txt\n    path: ./profiles/ruleset/lan_ip.txt\n  lan_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/lan.txt\n    path: ./profiles/ruleset/lan_non_ip.txt\n  microsoft_cdn_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt\n    path: ./profiles/ruleset/microsoft_cdn_non_ip.txt\n  microsoft_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/microsoft.txt\n    path: ./profiles/ruleset/microsoft_non_ip.txt\n  neteasemusic_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/neteasemusic.txt\n    path: ./profiles/ruleset/neteasemusic_ip.txt\n  neteasemusic_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/neteasemusic.txt\n    path: ./profiles/ruleset/neteasemusic_non_ip.txt\n  stream_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream.txt\n    path: ./profiles/ruleset/stream_ip.txt\n  stream_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream.txt\n    path: ./profiles/ruleset/stream_non_ip.txt\n  telegram_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/telegram.txt\n    path: ./profiles/ruleset/telegram_ip.txt\n  telegram_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/telegram.txt\n    path: ./profiles/ruleset/telegram_non_ip.txt\n  speedtest_domainset:\n    type: http\n    behavior: domain\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/domainset/speedtest.txt\n    path: ./profiles/ruleset/speedtest_domainset.txt\n  stream_eu_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_eu.txt\n    path: ./profiles/ruleset/stream_eu_non_ip.txt\n  stream_eu_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_eu.txt\n    path: ./profiles/ruleset/stream_eu_ip.txt\n  stream_hk_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_hk.txt\n    path: ./profiles/ruleset/stream_hk_non_ip.txt\n  stream_hk_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_hk.txt\n    path: ./profiles/ruleset/stream_hk_ip.txt\n  stream_jp_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_jp.txt\n    path: ./profiles/ruleset/stream_jp_non_ip.txt\n  stream_jp_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_jp.txt\n    path: ./profiles/ruleset/stream_jp_ip.txt\n  stream_kr_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_kr.txt\n    path: ./profiles/ruleset/stream_kr_non_ip.txt\n  stream_kr_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_kr.txt\n    path: ./profiles/ruleset/stream_kr_ip.txt\n  stream_tw_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_tw.txt\n    path: ./profiles/ruleset/stream_tw_non_ip.txt\n  stream_tw_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_tw.txt\n    path: ./profiles/ruleset/stream_tw_ip.txt\n  stream_us_non_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/non_ip/stream_us.txt\n    path: ./profiles/ruleset/stream_us_non_ip.txt\n  stream_us_ip:\n    type: http\n    behavior: classical\n    format: text\n    interval: 43200\n    url: https://ruleset.skk.moe/Clash/ip/stream_us.txt\n    path: ./profiles/ruleset/stream_us_ip.txt";
+const editor = document.getElementById('editor');
+const fileInput = document.getElementById('fileInput');
+const filenameEl = document.getElementById('filename');
+const statusEl = document.getElementById('status');
+const statusText = document.getElementById('statusText');
+let originalConfig = DEFAULT_CONFIG;
+let currentFilename = 'Mihomo_global_merged.yaml';
+
+function setStatus(message, type='ok') {
+  statusEl.className = 'status' + (type === 'error' ? ' error' : type === 'warn' ? ' warn' : '');
+  statusText.textContent = message;
+}
+function updateStats() {
+  const text = editor.value;
+  const lines = text.split(/\r?\n/);
+  document.getElementById('lineCount').textContent = lines.length;
+  let inGroups = false, groups = 0, filters = 0, icons = 0;
+  for (const line of lines) {
+    if (/^proxy-groups:\s*(?:#.*)?$/.test(line)) { inGroups = true; continue; }
+    if (/^[^\s#][A-Za-z0-9_-]*:\s*(?:#.*)?$/.test(line) && !/^proxy-groups:/.test(line)) inGroups = false;
+    if (inGroups) {
+      if (/^\s*-\s+name\s*:/.test(line)) groups++;
+      if (/^\s+icon\s*:/.test(line)) icons++;
+      if (/^\s+(?:filter|exclude-filter)\s*:/.test(line)) filters++;
+    }
+  }
+  document.getElementById('groupCount').textContent = groups;
+  document.getElementById('filterCount').textContent = filters;
+  document.getElementById('iconCount').textContent = icons;
+}
+function isEscaped(s, i) { let n=0; for (let j=i-1;j>=0 && s[j]==='\\';j--) n++; return n%2===1; }
+function matchingParen(s, start) {
+  let depth=0, inClass=false;
+  for (let i=start;i<s.length;i++) {
+    const c=s[i];
+    if (isEscaped(s,i)) continue;
+    if (c==='[' && !inClass) { inClass=true; continue; }
+    if (c===']' && inClass) { inClass=false; continue; }
+    if (inClass) continue;
+    if (c==='(') depth++;
+    else if (c===')') { depth--; if (depth===0) return i; }
+  }
+  return -1;
+}
+function splitTopLevelAlternatives(s) {
+  const parts=[]; let start=0, depth=0, inClass=false;
+  for (let i=0;i<s.length;i++) {
+    const c=s[i];
+    if (isEscaped(s,i)) continue;
+    if (c==='[' && !inClass) { inClass=true; continue; }
+    if (c===']' && inClass) { inClass=false; continue; }
+    if (inClass) continue;
+    if (c==='(') depth++;
+    else if (c===')') depth--;
+    else if (c==='|' && depth===0) { parts.push(s.slice(start,i)); start=i+1; }
+  }
+  parts.push(s.slice(start));
+  return parts;
+}
+function containsEmoji(s) {
+  try { return /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(s); }
+  catch (_) { return /[\uD800-\uDBFF][\uDC00-\uDFFF]/.test(s); }
+}
+function branchCategory(branch) {
+  const s=branch.trim();
+  if (/[\\.^$*+?()[\]{}]/.test(s)) return 3;
+  if (containsEmoji(s)) return 2;
+  const first = Array.from(s)[0] || '';
+  if (/^[A-Za-z0-9]/.test(first)) return 0;
+  if (/[\u3400-\u9FFF]/.test(s)) return 1;
+  return 2;
+}
+function sortAlternatives(parts) {
+  if (parts.length < 2) return parts;
+  const tagged = parts.map((value,index)=>({value,index,category:branchCategory(value)}));
+  // If the whole group is regex syntax (e.g. (^|[^A-Za-z])), preserve its order.
+  if (tagged.every(x=>x.category===3)) return parts;
+  const en = new Intl.Collator('en', {sensitivity:'base',numeric:true});
+  const zh = new Intl.Collator('zh-CN', {sensitivity:'base',numeric:true});
+  tagged.sort((a,b)=>{
+    if (a.category!==b.category) return a.category-b.category;
+    if (a.category===3) return a.index-b.index;
+    if (a.category===0) return en.compare(a.value,b.value) || a.index-b.index;
+    if (a.category===1) return zh.compare(a.value,b.value) || a.index-b.index;
+    return en.compare(a.value,b.value) || a.index-b.index;
+  });
+  return tagged.map(x=>x.value);
+}
+function transformRegex(expr) {
+  let out='';
+  for (let i=0;i<expr.length;) {
+    const c=expr[i];
+    if (c==='\\') { out+=expr.slice(i,i+2); i+=2; continue; }
+    if (c==='[') {
+      let j=i+1;
+      for (;j<expr.length;j++) { if (expr[j]===']' && !isEscaped(expr,j)) break; }
+      const end=j<expr.length?j+1:expr.length; out+=expr.slice(i,end); i=end; continue;
+    }
+    if (c==='(') {
+      const end=matchingParen(expr,i);
+      if (end<0) { out+=expr.slice(i); break; }
+      let inner=transformRegex(expr.slice(i+1,end));
+      const branches=splitTopLevelAlternatives(inner);
+      if (branches.length>1) inner=sortAlternatives(branches).join('|');
+      out+='('+inner+')'; i=end+1; continue;
+    }
+    out+=c; i++;
+  }
+  return out;
+}
+function sortFilterFields(text) {
+  const lines=text.replace(/\r\n?/g,'\n').split('\n');
+  let inGroups=false, changed=0;
+  for (let i=0;i<lines.length;i++) {
+    const line=lines[i];
+    if (/^proxy-groups:\s*(?:#.*)?$/.test(line)) { inGroups=true; continue; }
+    if (/^[^\s#][A-Za-z0-9_-]*:\s*(?:#.*)?$/.test(line) && !/^proxy-groups:/.test(line)) inGroups=false;
+    if (!inGroups) continue;
+    const m=line.match(/^(\s*(?:filter|exclude-filter)\s*:\s*)(.*)$/);
+    if (!m) continue;
+    const before=m[2];
+    // Keep quoted YAML scalars intact; this file's regex fields are plain scalars.
+    if ((before.startsWith('"') && before.endsWith('"')) || (before.startsWith("'") && before.endsWith("'"))) continue;
+    const after=transformRegex(before);
+    if (after!==before) { lines[i]=m[1]+after; changed++; }
+  }
+  return {text:lines.join('\n'),changed};
+}
+function normalizeText(text) {
+  return text.replace(/\r\n?/g,'\n').split('\n').map(line=>line.replace(/[ \t]+$/g,'')).join('\n').replace(/\n*$/,'\n');
+}
+function formatAll() {
+  const sorted=sortFilterFields(editor.value);
+  editor.value=normalizeText(sorted.text);
+  updateStats();
+  setStatus(`格式化完成：整理了 ${sorted.changed} 个 filter / exclude-filter 字段；已规范换行和行尾空格。请检查后再导入。`,'ok');
+}
+function sortOnly() {
+  const result=sortFilterFields(editor.value);
+  editor.value=result.text;
+  updateStats();
+  setStatus(`筛选关键词排序完成：${result.changed} 个字段发生变化。匹配词本身未增删。`,'ok');
+}
+function checkConfig() {
+  const text=editor.value, lines=text.split(/\r?\n/), warnings=[], names=[];
+  let inGroups=false, groupCount=0, iconCount=0, filterCount=0;
+  for (let i=0;i<lines.length;i++) {
+    const line=lines[i];
+    if (/\t/.test(line)) warnings.push(`第 ${i+1} 行含 Tab 缩进字符。`);
+    if (/^proxy-groups:\s*(?:#.*)?$/.test(line)) {inGroups=true;continue;}
+    if (/^[^\s#][A-Za-z0-9_-]*:\s*(?:#.*)?$/.test(line) && !/^proxy-groups:/.test(line)) inGroups=false;
+    if (inGroups) {
+      const nm=line.match(/^\s*-\s+name\s*:\s*(.*?)\s*$/);
+      if(nm){groupCount++; const name=nm[1].replace(/^['"]|['"]$/g,''); if(names.includes(name)) warnings.push(`策略组名称重复：${name}`); names.push(name);}
+      if(/^\s+icon\s*:/.test(line)) iconCount++;
+      if(/^\s+(?:filter|exclude-filter)\s*:/.test(line)) filterCount++;
+    }
+  }
+  if (/^proxies:\s*\[\s*\]\s*$/m.test(text) && !/^proxy-providers:/m.test(text)) warnings.push('proxies 为空且未定义 proxy-providers；若没有外部注入节点，配置不会自带可用代理节点。');
+  if (/RULE-SET,neteasemusic_(?:non_ip|ip),GLOBAL/.test(text)) warnings.push('网易云音乐规则仍指向 GLOBAL；若希望直连，请改为 DIRECT。');
+  const iconUrls=[...text.matchAll(/^\s+icon:\s*["']?(https?:\/\/[^"'\s]+)["']?\s*$/gm)].map(m=>m[1]);
+  const uniqueIcons=new Set(iconUrls);
+  let msg=`检查完成：识别到 ${groupCount} 个策略组、${filterCount} 个筛选字段、${iconCount} 个图标字段。`;
+  if(warnings.length) msg+=` 发现 ${warnings.length} 项提醒：`+warnings.join(' ');
+  else msg+=' 未发现本工具覆盖范围内的明显问题。';
+  setStatus(msg,warnings.length?'warn':'ok');
+}
+function downloadYaml() {
+  const content=editor.value.replace(/\r\n?/g,'\n').replace(/\n*$/,'\n');
+  const blob=new Blob([content],{type:'text/yaml;charset=utf-8'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  const base=currentFilename.replace(/\.(yaml|yml|txt)$/i,'') || 'Mihomo_config';
+  a.href=url; a.download=base+'_formatted.yaml'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  setStatus('已生成下载文件。请在 Clash Party / Mihomo 中实际加载验证后再使用。','ok');
+}
+async function copyText() {
+  try { await navigator.clipboard.writeText(editor.value); setStatus('配置内容已复制到剪贴板。','ok'); }
+  catch (_) { editor.focus(); editor.select(); const ok=document.execCommand('copy'); setStatus(ok?'配置内容已复制到剪贴板。':'浏览器不允许自动复制，请在编辑区按 Ctrl/⌘ + A 后复制。',ok?'ok':'warn'); }
+}
+function loadFile(file) {
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{editor.value=String(reader.result||'');originalConfig=editor.value;currentFilename=file.name;filenameEl.textContent=file.name;updateStats();setStatus(`已载入 ${file.name}。文件只在当前浏览器内处理。`,'ok');};
+  reader.onerror=()=>setStatus('文件读取失败，请重试。','error'); reader.readAsText(file,'UTF-8');
+}
+document.getElementById('openBtn').addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',e=>loadFile(e.target.files[0]));
+document.getElementById('formatBtn').addEventListener('click',formatAll);
+document.getElementById('sortBtn').addEventListener('click',sortOnly);
+document.getElementById('checkBtn').addEventListener('click',checkConfig);
+document.getElementById('downloadBtn').addEventListener('click',downloadYaml);
+document.getElementById('copyBtn').addEventListener('click',copyText);
+document.getElementById('resetBtn').addEventListener('click',()=>{editor.value=DEFAULT_CONFIG;originalConfig=DEFAULT_CONFIG;currentFilename='Mihomo_global_merged.yaml';filenameEl.textContent=currentFilename;updateStats();setStatus('已恢复网页内置的 Mihomo_global_merged.yaml 示例配置。','ok');});
+editor.addEventListener('input',updateStats);
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();downloadYaml();}});
+const drop=document.getElementById('dropZone');
+for(const ev of ['dragenter','dragover']) drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');});
+for(const ev of ['dragleave','drop']) drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');});
+drop.addEventListener('drop',e=>loadFile(e.dataTransfer.files[0]));
+drop.addEventListener('click',()=>fileInput.click());
+editor.value=DEFAULT_CONFIG;updateStats();
+</script>
+</body>
+</html>
