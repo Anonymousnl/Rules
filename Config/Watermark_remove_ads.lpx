@@ -1,0 +1,28 @@
+#!name=今日水印相机去广告
+#!desc=今日水印相机_移除横幅广告
+#!openUrl=https://apps.apple.com/app/id1319071502
+#!author=Anonymous[https://github.com/Anonymousnl]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://github.com/Anonymousnl/Rules
+#!icon=https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Watermark.png
+#!date=2026-10-17 00:00:00
+
+[Rule]
+DOMAIN, ad.xhey.top, REJECT
+
+[Rewrite]
+
+# 今日水印相机自建广告接口：返回空字典
+^https?://api\.sogaha\.cn/ssp/ad/get\?ip reject-dict
+
+# 穿山甲广告投放接口
+^https?://api-access\.pangolin-sdk-toutiao\.com/api/ad/union/sdk reject-200
+
+# 穿山甲广告素材及投放路径
+^https?://[^\s/]*\.pangle\.cn/(ad|api/ad|material|splash).* reject-200
+
+[MITM]
+hostname = *.pangle.cn,api-access.pangolin-sdk-toutiao.com,api.sogaha.cn
