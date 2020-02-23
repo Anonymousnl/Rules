@@ -1,0 +1,219 @@
+proxies: []
+proxy-groups:
+  - name: GLOBAL
+    type: url-test
+    include-all: true
+    interval: 600
+    tolerance: 50
+rules:
+  - RULE-SET,apple_cdn,DIRECT
+  - RULE-SET,apple_cn_non_ip,DIRECT
+  - RULE-SET,apple_services,DIRECT
+  - RULE-SET,direct_non_ip,DIRECT
+  - RULE-SET,domestic_non_ip,DIRECT
+  - RULE-SET,lan_non_ip,DIRECT
+  - RULE-SET,microsoft_cdn_non_ip,DIRECT
+  - RULE-SET,microsoft_non_ip,DIRECT
+  - RULE-SET,neteasemusic_non_ip,DIRECT
+  - RULE-SET,ai_non_ip,GLOBAL
+  - RULE-SET,cdn_domainset,GLOBAL
+  - RULE-SET,cdn_non_ip,GLOBAL
+  - RULE-SET,download_domainset,GLOBAL
+  - RULE-SET,download_non_ip,GLOBAL
+  - RULE-SET,global_non_ip,GLOBAL
+  - RULE-SET,stream_non_ip,GLOBAL
+  - RULE-SET,telegram_non_ip,GLOBAL
+  - RULE-SET,china_ip,DIRECT
+  - RULE-SET,domestic_ip,DIRECT
+  - RULE-SET,lan_ip,DIRECT
+  - RULE-SET,neteasemusic_ip,DIRECT
+  - RULE-SET,stream_ip,GLOBAL
+  - RULE-SET,telegram_ip,GLOBAL
+  - MATCH,GLOBAL
+proxy-providers:
+  SC:
+    url: null
+    type: http
+    interval: 3600
+    path: ./profiles/groups/SC.yaml
+    health-check:
+      enable: true
+      interval: 600
+  YY:
+    url: null
+    type: http
+    interval: 3600
+    path: ./profiles/groups/YY.yaml
+    health-check:
+      enable: true
+      interval: 600
+  RZ:
+    url: null
+    type: http
+    interval: 3600
+    path: ./profiles/groups/RZ.yaml
+    health-check:
+      enable: true
+      interval: 600
+rule-providers:
+  ai_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/ai.txt
+    path: ./profiles/ruleset/ai_non_ip.txt
+  apple_cdn:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
+    path: ./profiles/ruleset/apple_cdn.txt
+  apple_cn_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
+    path: ./profiles/ruleset/apple_cn_non_ip.txt
+  apple_services:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/apple_services.txt
+    path: ./profiles/ruleset/apple_services.txt
+  cdn_domainset:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/domainset/cdn.txt
+    path: ./profiles/ruleset/cdn_domainset.txt
+  cdn_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/cdn.txt
+    path: ./profiles/ruleset/cdn_non_ip.txt
+  china_ip:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
+    path: ./profiles/ruleset/china_ip.txt
+  direct_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/direct.txt
+    path: ./profiles/ruleset/direct_non_ip.txt
+  domestic_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/domestic.txt
+    path: ./profiles/ruleset/domestic_ip.txt
+  domestic_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt
+    path: ./profiles/ruleset/domestic_non_ip.txt
+  download_domainset:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/domainset/download.txt
+    path: ./profiles/ruleset/download_domainset.txt
+  download_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/download.txt
+    path: ./profiles/ruleset/download_non_ip.txt
+  global_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/global.txt
+    path: ./profiles/ruleset/global_non_ip.txt
+  lan_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/lan.txt
+    path: ./profiles/ruleset/lan_ip.txt
+  lan_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/lan.txt
+    path: ./profiles/ruleset/lan_non_ip.txt
+  microsoft_cdn_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
+    path: ./profiles/ruleset/microsoft_cdn_non_ip.txt
+  microsoft_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft.txt
+    path: ./profiles/ruleset/microsoft_non_ip.txt
+  neteasemusic_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/neteasemusic.txt
+    path: ./profiles/ruleset/neteasemusic_ip.txt
+  neteasemusic_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/neteasemusic.txt
+    path: ./profiles/ruleset/neteasemusic_non_ip.txt
+  stream_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./profiles/ruleset/stream_ip.txt
+  stream_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
+    path: ./profiles/ruleset/stream_non_ip.txt
+  telegram_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./profiles/ruleset/telegram_ip.txt
+  telegram_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/telegram.txt
+    path: ./profiles/ruleset/telegram_non_ip.txt

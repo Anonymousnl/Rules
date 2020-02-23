@@ -1,0 +1,17 @@
+#!name=今日水印相机去广告
+#!desc=今日水印相机_移除横幅广告
+#!openUrl=https://apps.apple.com/app/id1319071502
+#!author=Anonymous[https://github.com/Anonymousnl]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/Anonymousnl/Rules
+#!icon=https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Icons/Watermark.png
+#!date=2025-03-10 00:00:00
+
+[rewrite]
+^https?:\/\/api\.sogaha\.cn\/ssp\/ad\/get\?ip reject-dict
+
+[mitm]
+hostname = api.sogaha.cn
