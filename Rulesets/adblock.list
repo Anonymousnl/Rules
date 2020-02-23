@@ -1,0 +1,168 @@
+# > Keep
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/ads
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/cauchy\/growth\/init
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v\d\/popup\/getPopUp
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/kprime\/v\d\/popups\/primeGuide
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/tool\/v\d\/jump\/popup$
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list
+URL-REGEX,^https?:\/\/api\.gotokeep\.com\/training\/box\/config
+URL-REGEX,^https?:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d\/ad
+URL-REGEX,^https?:\/\/static1\.keepcdn\.com\/ark_optimus\/202\d\/*\/*\/.*.(jpg|png)
+# > QQ音乐
+URL-REGEX,^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/kg_ad
+URL-REGEX,^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info
+URL-REGEX,^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads
+# > Youtube
+URL-REGEX,^https?:\/\/(s|www)\.youtube\.com\/(pagead|ptracking)
+URL-REGEX,^https?:\/\/(s|www)\.youtube\.com\/api\/stats\/ads
+URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad
+URL-REGEX,^https?:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\?
+URL-REGEX,^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext
+# > 哔哩哔哩
+URL-REGEX,^https?:\/\/[\d\.]+:8000\/v\d\/resource\/\w{32}-1-SPLASH
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/pgc\/season\/player\/cards
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/pgc\/season\/player\/ogv\/cards
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v\d\/resource
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v\d\/dm\/qoe\/show
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report
+URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/resource\/ip
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/resource\/peak\/download
+URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v\d\/search\/defaultwords
+URL-REGEX,^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH
+# > 菜鸟裹裹
+URL-REGEX,^https?:\/\/acs4miniapp-inner\.m\.taobao\.com\/gw\/mtop\.alimama\.abyss\.unionpage\.get
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.tabbar\.marketing\.get\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v\d|expose\.mreply|index)\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|close|event)\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn
+URL-REGEX,^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad
+URL-REGEX,^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge
+# > 滴滴出行
+URL-REGEX,^https?:\/\/api\.udache\.com\/gulfstream\/confucius\/api\/privacy\/app\/popList
+URL-REGEX,^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles
+URL-REGEX,^https?:\/\/hd\.xiaojukeji\.com\/d
+URL-REGEX,^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index
+# > 滴滴青桔
+URL-REGEX,^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery
+URL-REGEX,^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(combineHomepageInfo|mallRecommend)
+# > 斗鱼直播
+URL-REGEX,^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update
+URL-REGEX,^https?:\/\/capi\.douyucdn\.cn\/api\/v\d\/getStartSend?client_sys=ios
+URL-REGEX,^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios
+URL-REGEX,^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd
+URL-REGEX,^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo
+URL-REGEX,^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo
+URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo
+URL-REGEX,^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend
+URL-REGEX,^https?:\/\/staticlive\.douyucdn\.cn\/.+\/getStartSend
+URL-REGEX,^https?:\/\/staticlive\.douyucdn\.cn\/upload\/signs
+# > 高德地图
+URL-REGEX,^https?:\/\/m\d-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization)
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list)
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/aos\/main\/page\/product\/list\?
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/asa\/ads_attribution
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/(main-page-assets|main-page-location|ridewalk-end-fc)
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/shield\/scene\/recommend
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_poi\/tips_adv
+URL-REGEX,^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/weather\/v\d
+URL-REGEX,^https?:\/\/oss\.amap\.com\/ws\/banner\/lists
+URL-REGEX,^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp
+# > 盒马
+URL-REGEX,^https?:\/\/acs(-|\.)m\.(freshippo|taobao)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice
+URL-REGEX,^https?:\/\/acs(-|\.)m\.(freshippo|taobao)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info
+URL-REGEX,^https?:\/\/acs(-|\.)m\.(freshippo|taobao)\.com\/gw\/mtop\.wdk\.render\.querysinglepage
+URL-REGEX,^https?:\/\/acs(-|\.)m\.(freshippo|taobao)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene
+# > 华住会
+URL-REGEX,^https?:\/\/api-fouth-mem\.huazhu\.com\/api\/rights\/bannerList
+# > 今日水印相机
+URL-REGEX,^https?:\/\/api\.sogaha\.cn\/ssp\/ad\/get\?ip
+# > 京东
+URL-REGEX,^https?:\/\/\w{32}\.jddebug\.com\/diagnose\?
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getWidget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts|searchBoxWord|stationPullService|widget|xview2Config)
+URL-REGEX,^https?:\/\/img\d+\.360buyimg\.com\/jddjadvertise\/
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/na\/m\/getLoadingPicture
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/base\/na\/m\/adInfo
+URL-REGEX,^https?:\/\/storage\.360buyimg\.com\/app\.m\.jd\.com\/lottie
+URL-REGEX,^https?:\/\/storage\.360buyimg\.com\/dynamicConfig\/binary
+# > 扫描全能王
+URL-REGEX,^https?:\/\/api\.intsig\.net\/user\/cs\/operating\/app\/get_startpic\/
+# > 顺丰速运
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList
+URL-REGEX,^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList
+URL-REGEX,^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo
+URL-REGEX,^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list
+URL-REGEX,^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo
+URL-REGEX,^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList
+URL-REGEX,^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity
+URL-REGEX,^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query
+# > 淘宝
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.predict
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome
+URL-REGEX,^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources
+URL-REGEX,^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)
+URL-REGEX,^https?:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0
+# > 微博
+URL-REGEX,^https?:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime
+URL-REGEX,^https?:\/\/card\.weibo\.com\/article\/m\/aj\/reward
+URL-REGEX,^https?:\/\/card\.weibo\.com\/article\/m\/aj\/uvead
+URL-REGEX,^https?:\/\/datumogs\.sports\.weibo\.cn\/wb\/api\/medal\/all\?
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/!\/sug\/list\/finderchange
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/chaohua\/discovery\/home_bottom\/switch
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/huati\/discovery_home_bottom_getdotinfo
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/huati\/mobile_discovery_searchchange
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/live\/media_homelist
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/wbox\/\w+\/home_bottom_modal
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/!\/wbox\/\w+\/interest_category
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/comments\/bullet_screens
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/photo\/info
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile\/recommend_popuser
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/push\/daily
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search\/container_discover
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/container_positive
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/push_info
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ug\/checkin\/list
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video\/redpacket
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/vote\/get_vote_detail
+URL-REGEX,^https?:\/\/preload-click\.uve\.weibo\.com\/interface\/wbpullad\/wbpullad_click\.php
+URL-REGEX,^https?:\/\/preload-click\.uve\.weibo\.com\/wbapplua\/get_wbpullad_log\.lua
+URL-REGEX,^https?:\/\/preload-impression\.uve\.weibo\.com\/interface\/wbpullad\/wbpullad_click\.php
+URL-REGEX,^https?:\/\/preload-impression\.uve\.weibo\.com\/wbapplua\/get_wbpullad_log\.lua
+URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/get-lbs-cell-info\.php
+URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php
+URL-REGEX,^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/reward
+URL-REGEX,^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/uvead
+# > 闲鱼
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.live\.home\.ads\.material\.get
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.topic\.banner\/
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.(discover|shade)\/
+URL-REGEX,^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.wireless\.home\.xianyu(\.my)?\.awesome\.get
+URL-REGEX,^https?:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/
