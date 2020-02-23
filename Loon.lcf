@@ -1,0 +1,120 @@
+[General]
+ip-mode = v4-only
+ipv6-vif = off
+dns-server = system
+sni-sniffing = true
+disable-stun = false
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+interface-mode = auto
+test-timeout = 5
+disconnect-on-policy-change = false
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://www.gstatic.com/generate_204
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+skip-proxy = 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+
+[Proxy]
+
+[Remote Proxy]
+
+[Remote Filter]
+全球节点 = NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
+台湾节点 = NameRegex, FilterKey = "^(?=.*((?i)🇹🇼|台湾|(\b(TW|TWN|Tai|Taiwan)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+新国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|SGP|Singapore)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+日本节点 = NameRegex, FilterKey = "^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|JPN|Japan)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+美国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|USA|United States)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+韩国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+香港节点 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)wandayun|版本|备用|超时|到期|倒卖|地址|订阅|返利|贩卖|防止|访问|福利|更新|工单|关注|官网|官址|国内|过期|海外|好友|回国|获取|机场|加入|教程|客服|联系|流量|频道|群|使用|收藏|说明|特别|提示|通报|通知|网站|网址|无法|下次|校园|循环|邀请|已用|邮箱|游戏|支持|作者|🎮|(\b(GAME)\b))).*$"
+
+[Proxy Group]
+# 时延优选策略组
+全球时延优选 = url-test,全球节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+台湾时延优选 = url-test,台湾节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+新国时延优选 = url-test,新国节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+日本时延优选 = url-test,日本节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+美国时延优选 = url-test,美国节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+韩国时延优选 = url-test,韩国节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+香港时延优选 = url-test,香港节点,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+# 兜底策略后备
+兜底后备策略 = url-test,香港时延优选,台湾时延优选,日本时延优选,韩国时延优选,新国时延优选,美国时延优选,全球时延优选,interval = 60,img-url = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/icon/fallback.png
+
+[Rule]
+FINAL,兜底后备策略
+
+[Remote Rule]
+https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/AppleIntelligence.conf, policy=美国时延优选, tag=Apple Intelligence, enabled=true
+https://rule.kelee.one/Loon/WeChat.lsr, policy=DIRECT, tag=微信分流, enabled=true
+https://ruleset.skk.moe/List/domainset/apple_cdn.conf, policy=DIRECT, tag=Apple 国内 CDN 域名, enabled=true
+https://ruleset.skk.moe/List/domainset/download.conf, policy=DIRECT, tag=软件、游戏和驱动的下载和更新域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/apple_cn.conf, policy=DIRECT, tag=Apple CN 域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/apple_services.conf, policy=DIRECT, tag=苹果服务域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/direct.conf, policy=DIRECT, tag=常见直连规则列表, enabled=true
+https://ruleset.skk.moe/List/non_ip/domestic.conf, policy=DIRECT, tag=国内常见域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/download.conf, policy=DIRECT, tag=软件、游戏和驱动的下载和更新域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/microsoft.conf, policy=DIRECT, tag=微软服务域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf, policy=DIRECT, tag=Microsoft 国内 CDN 域名, enabled=true
+https://ruleset.skk.moe/List/domainset/cdn.conf, policy=兜底后备策略, tag=静态 CDN 域名, enabled=true
+https://ruleset.skk.moe/List/domainset/speedtest.conf, policy=兜底后备策略, tag=测速网站及其测速点域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/ai.conf, policy=兜底后备策略, tag=AIGC 类服务域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/cdn.conf, policy=兜底后备策略, tag=静态 CDN 域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/global.conf, policy=兜底后备策略, tag=常见海外域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_eu.conf, policy=兜底后备策略, tag=欧洲相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_hk.conf, policy=香港时延优选, tag=香港相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_jp.conf, policy=日本时延优选, tag=日本相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_kr.conf, policy=韩国时延优选, tag=韩国相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_tw.conf, policy=台湾时延优选, tag=台湾相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/stream_us.conf, policy=美国时延优选, tag=北美相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/non_ip/telegram.conf, policy=兜底后备策略, tag=Telegram 域名, enabled=true
+https://ruleset.skk.moe/List/ip/china_ip.conf, policy=DIRECT, tag=国内 IP 段, enabled=true
+https://ruleset.skk.moe/List/ip/domestic.conf, policy=DIRECT, tag=国内 IP 段, enabled=true
+https://ruleset.skk.moe/List/ip/stream_eu.conf, policy=兜底后备策略, tag=欧洲相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/stream_hk.conf, policy=香港时延优选, tag=香港相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/stream_jp.conf, policy=日本时延优选, tag=日本相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/stream_kr.conf, policy=韩国时延优选, tag=韩国相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/stream_tw.conf, policy=台湾时延优选, tag=台湾相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/stream_us.conf, policy=美国时延优选, tag=北美相关流媒体域名, enabled=true
+https://ruleset.skk.moe/List/ip/telegram.conf, policy=兜底后备策略, tag=Telegram 域名, enabled=true
+https://ruleset.skk.moe/List/ip/telegram_asn.conf, policy=兜底后备策略, tag=Telegram 域名, enabled=true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy=DIRECT, tag=LAN, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy=DIRECT, tag=CN REGION, enabled=true
+
+[Plugin]
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/CamScanner_unlock.lpx, enabled=true
+https://raw.githubusercontent.com/Anonymousnl/Rules/master/Config/Watermark_remove_ads.lpx, enabled=true
+
+[Mitm]
+ca-p12 = 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
+ca-passphrase = 38BA4B04
+skip-server-cert-verify = false

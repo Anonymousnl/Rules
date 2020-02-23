@@ -1,0 +1,153 @@
+[Adblock Plus 2.0]
+! Title: 自用规则
+! Version: 2026021100
+! Expires: 5 hours
+! Homepage: https://github.com/Anonymousnl/Rules/tree/master/Greasy
+bbs.pcbeta.com###fg_196
+cn.bing.com###b_context
+cn.bing.com##.sa_ease_rr
+live.douyin.com##.FvEk43aG.hA2I3Wjd
+live.douyin.com##.FvEk43aG.jVe5FHxd
+live.douyin.com##.M28H125n
+live.douyin.com##.SmJXxmZq.tab-activity_2671515
+live.douyin.com##.SmJXxmZq.tab-activity_2717000
+live.douyin.com##.SmJXxmZq.tab-activity_2757521
+live.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > .RQFWObp0
+live.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > div > .RQFWObp0
+live.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > div.iqAeEhI1
+live.douyin.com##.mw3XPVwN
+live.douyin.com##.zipjTPpf.undefined.QQzJ6KOK.EoY455Q_.tab-aisearch
+live.douyin.com##.zipjTPpf.undefined.QQzJ6KOK.EoY455Q_.tab-microgame
+pan.baidu.com##.nd-chat-ai-btn__container
+pan.baidu.com##.nd-game-entry.wp-s-header__right-item.gameEntry
+pan.baidu.com##.nd-new-user-dialog
+pan.baidu.com##.nd-operate-guidance
+pan.baidu.com##.nd-sug-ad-item.wp-s-header__right-item
+pan.baidu.com##.nd-vip-btn.wp-s-header__right-item
+pan.baidu.com##.wp-s-aside-nav__main
+pan.baidu.com##.wp-s-header__vip-btn-tip
+tool.ip138.com##.footer
+tool.ip138.com##.header
+tool.ip138.com##.only-pc.mod-breadcrumb
+tool.ip138.com##.side
+tool.ip138.com##.tips
+tool.lengyanwl.com##.bg-lighter.nk-footer-fluid.nk-footer
+tool.lengyanwl.com##.is-light.nk-header-fixed.nk-header-fluid.nk-header
+tool.lengyanwl.com##.text-center.mt-5
+tool.lengyanwl.com##p
+v.qq.com###channel-vip-popup
+www.123pan.com##.PullNewCusButton > .new-menu-item-image
+www.123pan.com##.mfy-main-layout__head
+www.123pan.com##.new-menu-item > .new-menu-item-image
+www.123pan.com##.special-menu-item-container-migration--label
+www.baidu.com###content_right
+www.baidu.com###s_wrap
+www.baidu.com##.ai-search-btn-svg_vi_CZ.svg_2cDwx
+www.baidu.com##.foot-container-sample_LHI2D.foot-container_2X1Nt
+www.baidu.com##.new-brand-btn_1WMjQ.jump-btn_2QC9p.aisearch-btn_1yI-K
+www.baidu.com##.new_search_guide_bub
+www.baidu.com##.new_search_guide_bub_animation.new_search_guide_bub
+www.baidu.com##.operate-wrapper
+www.baidu.com##.panel-list_8jHmm
+www.baidu.com##.s-isindex-wrap.s-bottom-layer
+www.baidu.com##.s-isindex-wrap.s-top-left-new
+www.baidu.com##.s-tab-csaitab.s-tab-item-img_2Giz-.s-tab-item_1CwH-.s-tab-item
+www.baidu.com##.tag-container_ksKXH
+www.douyin.com##.BobWouP6._WR0FtOG
+www.douyin.com##.BobWouP6.sny3V6GP
+www.douyin.com##.EQmcw0Bx.tab-activity_2711248
+www.douyin.com##.EQmcw0Bx.tab-activity_2717000
+www.douyin.com##.EQmcw0Bx.tab-activity_2728312
+www.douyin.com##.EQmcw0Bx.tab-activity_2757521
+www.douyin.com##.EScvuSoY
+www.douyin.com##.GM2u793R
+www.douyin.com##.ICAUzM8R.JbKUG3hY.eJhYZuIF > .dYcWlUlB
+www.douyin.com##.ICAUzM8R.JbKUG3hY.eJhYZuIF > div > .dYcWlUlB
+www.douyin.com##.ICAUzM8R.JbKUG3hY.eJhYZuIF > div.cbBVPXaz
+www.douyin.com##.LSsAQAbh
+www.douyin.com##.NjcF0KOc.pwhQE1LH
+www.douyin.com##.RCp_ZQ8e.rYeSCC9G
+www.douyin.com##.SmJXxmZq.tab-activity_2671515
+www.douyin.com##.SmJXxmZq.tab-activity_2707218
+www.douyin.com##._e7lJDCC
+www.douyin.com##.account > svg
+www.douyin.com##.ai-note-container.FEM7NVI8
+www.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > .RQFWObp0
+www.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > div > .RQFWObp0
+www.douyin.com##.b6dX2u50.QCAc0UCH.i4p_LDeX > div.iqAeEhI1
+www.douyin.com##.ciHNRiII
+www.douyin.com##.e5v3_cjW
+www.douyin.com##.fwi7VMnj
+www.douyin.com##.jjWP1wt0.undefined.Zmm5iRSb.zGL_Zelf.tab-aisearch
+www.douyin.com##.jjWP1wt0.undefined.Zmm5iRSb.zGL_Zelf.tab-follow > .kM0XH6VH.uz1VJwFY > .qvw0NpcQ
+www.douyin.com##.jjWP1wt0.undefined.Zmm5iRSb.zGL_Zelf.tab-microgame
+www.douyin.com##.mw3XPVwN
+www.douyin.com##.nNg4_5ok.m6gzwj_4
+www.douyin.com##.r68hW_1W
+www.douyin.com##.redDot.gVBVHVSB
+www.douyin.com##.ubTPHKKR.gpTZ3OwX
+www.douyin.com##.vN8iNcM5.eYZ5aEPM
+www.douyin.com##.xFzvM6nY
+www.douyin.com##.zipjTPpf.undefined.QQzJ6KOK.EoY455Q_.tab-aisearch
+www.douyin.com##.zipjTPpf.undefined.QQzJ6KOK.EoY455Q_.tab-follow > .ZH4JvXNl.hY8lWHgA > .blGwnjkb
+www.douyu.com##.AnchorPocketTips
+www.douyu.com##.Aside-footer
+www.douyu.com##.Game.public-DropMenu
+www.douyu.com##.Header > .ActEntry.u-inlineBlock
+www.douyu.com##.HeaderNav
+www.douyu.com##.Video.public-DropMenu
+www.douyu.com##.categoryRow__Ka6id.cover__gII2R.floor__uPk-M.layoutMain__k2SIL
+www.douyu.com##.elevator__I5Sgb
+www.douyu.com##.favorite__JsYHi.cover__gII2R.floor__uPk-M.layoutMain__k2SIL
+www.douyu.com##.footerCate__Z-MhB.layoutMain__k2SIL
+www.douyu.com##.footer__o-xhv
+www.douyu.com##.homeFooter__r9RJb
+www.douyu.com##.recommendCategoryContainer__Jd-aI
+www.douyu.com##.wm-act-kefu-widget
+www.google.com###gws-output-pages-elements-homepage_additional_languages__als
+www.google.com##.SSwjIe.KxwPGc
+www.google.com##.lJ9FBc.FPdoLc
+www.huya.com###J_modActList
+www.huya.com###week-star-btn
+www.huya.com##.Download--2uelAwliqzdTsgCODf-erx
+www.huya.com##.GuangG--1IcYa1JEFgtE35MbPqIk7g
+www.huya.com##.NavIg--Kxh7PjtVzZA95RizAlvh1.NavItem--1jr9x80QTPbnrDwqn834hF
+www.huya.com##.box-recom
+www.huya.com##.clearfix.mod-game-type
+www.huya.com##.clearfix.mod-index-recommend
+www.huya.com##.clearfix.mod-news-section
+www.huya.com##.common-popup
+www.huya.com##.helper-mm--uRKOxJC_cI5VDDY5XUjp
+www.huya.com##.helperbar-root--12hgWk_4zOxrdJ73vtf1YI
+www.huya.com##.helperbar-root--iqrA3ft6p3ljKZvmWDaA
+www.huya.com##.huya-footer
+www.huya.com##.hy-nav-item-match.hy-nav-item
+www.huya.com##.jump-to-phone-bd
+www.huya.com##.liveList-header-r
+www.huya.com##.mod-index-list
+www.huya.com##.player-box-icon-tip
+www.huya.com##.room-footer
+www.huya.com##.room-sidebar-hd
+www.huya.com##.sidebar-bottom
+www.huya.com##.taskTips--3xDuu7SIdTU3cg7PKqKQyt
+www.huya.com##.tip-bg-common-new.diy-activity-icon-bubble-tips
+www.huya.com##.tips-blueRay--2ci_UgGVmW3qfttie1K_dj.game-filter-tips--FkGnnmfxtMkC4UM4I-Xga
+www.huya.com##.tips-blueRay--dDdpVtepWDzSdwIsipY7.game-filter-tips--_9lb5NEVch_FRLsGxeh4
+www.huya.com##.tips-msg--SrEJq1smJ6AB4FzMPa1Ly
+www.huya.com##.tips-msg--t0bkbMxm7NemINTtVQHd
+www.huya.com##.wrap-ext.chat-wrap-panel
+www.huya.com##.wrap-income.chat-wrap-panel
+www.huya.com##[src="https://diy-assets.msstatic.com/shouhu/qinmiduka/xinke_3.png"]
+www.iqiyi.com##.hotContent_container__\+PKtp
+www.iqiyi.com##.shaped-popup_container__cHzf2
+www.wetools.com###addweixin-widget
+www.wetools.com##.breadcrumb-wrap
+www.wetools.com##.page-footer
+www.wetools.com##.ui_bggray
+www.wetools.com##.ui_header.page-header
+www.wetools.com##.ui_tooldesc
+www.wetools.com##.ui_toolrecom
+www.youku.com##.vip_angle_mark
+wx.mail.qq.com##.sidebar-menu-red-dot-tips
+wx.mail.qq.com##.sidebar-menus.ui-float-scroll-body > div.frame-sidebar-menu > .sidebar-menu-content > .sidebar-menu-red-dot
+wx.mail.qq.com##div.frame-sidebar-my-files-item.frame-sidebar-menu > .sidebar-menu-content > .sidebar-menu-red-dot
